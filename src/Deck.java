@@ -61,8 +61,8 @@ public class Deck {
 
 	public Card takeOne() {
 		// take a card from the deck
-		//we were told to ignore trying to take a card from an empty deck
-		return cards[--size];
+		// we were told to ignore trying to take a card from an empty deck
+		return size == 0 ? null : cards[--size];
 	}
 
 	public String toString() {
