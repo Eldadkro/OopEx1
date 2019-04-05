@@ -47,7 +47,7 @@ public class Card {
 
 	public int compareTo(Card other) {
 		//the compare method works as follows:
-		// # first the value of the card determing the result 
+		// # first the value of the card determine the result 
 		// # then the suit 
 		// returns positive if higher , zero if equal and negative if smaller 
 		int numDif = this.getNum() - other.getNum();

@@ -30,7 +30,7 @@ public class Deck {
 		 */
 		this.size = from.getNumCards() > num ? num : from.getNumCards();
 		this.cards = new Card[this.size];
-		for (int i = 0; i < num; i++)
+		for (int i = 0; i < this.size; i++)
 			cards[i] = from.takeOne();
 	}
 
@@ -39,14 +39,12 @@ public class Deck {
 		 * takes the cards from two decks each time from each deck till they are both
 		 * empty
 		 */
-		boolean flag = true;
 		int i;
 		this.size = first.getNumCards() + second.getNumCards();
 		this.cards = new Card[this.size];
 		// iterates the decks until one of them is empty
 		for (i = 0; i < this.size && first.getNumCards() != 0 && second.getNumCards() != 0; i++) {
 			this.cards[i] = i % 2 == 0 ? first.takeOne() : second.takeOne();
-			flag = !flag;
 		}
 		// in the case that the decks are not of the same size
 		// adds the rest to the deck
@@ -63,11 +61,12 @@ public class Deck {
 
 	public Card takeOne() {
 		// take a card from the deck
+		//we were told to ignore trying to take a card from an empty deck
 		return cards[--size];
 	}
 
 	public String toString() {
-		// the string fromat to print in the case we want to print
+		// the string format to print in the case we want to print
 		// the deck
 		String str = "[";
 		if (this.size == 0) // in the case of empty deck

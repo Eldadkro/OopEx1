@@ -1,4 +1,5 @@
 
+
 public class Rooter {
 
 	private double precision;

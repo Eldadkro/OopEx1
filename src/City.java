@@ -9,12 +9,13 @@ public class City {
 	private Road[] roads;
 	private int numRoads;
 	private String name;
+	private static final int sizeOfRoad = 10;
 
 	// constructor
 	public City(String name) {
 		this.name = name;
 		this.numRoads = 0;
-		this.roads = new Road[10];
+		this.roads = new Road[sizeOfRoad];
 	}
 
 	// constructor
